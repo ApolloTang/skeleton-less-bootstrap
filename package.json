@@ -1,5 +1,5 @@
 {
-  "name": "skeleton-less-bootstrap",
+  "name": "no-name",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,14 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "less-plugin-autoprefix": "^1.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-less": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
-    "jit-grunt": "^0.9.1",
-    "less-plugin-clean-css": "^1.5.0",
     "matchdep": "^0.3.0"
   }
 }

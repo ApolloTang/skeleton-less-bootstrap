@@ -1,7 +1,4 @@
 module.exports = function(grunt) {
-    // require('jit-grunt')(grunt, {
-    //
-    // });
 
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
@@ -9,38 +6,30 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
+        // to read: http://stackoverflow.com/questions/tagged/grunt-contrib-less
         less: {
             development: {
                 options: {
-                    paths: ["assets/css"]
+                    paths: ["style"]
                 },
                 files: {
-                    "main.css": "main.less"
+                    "style/main.css": "style/main.less"
                 }
             },
             production: {
                 options: {
-                    paths: ["assets/css"],
-                    plugins: [
-                        new(require('less-plugin-autoprefix'))({
-                            browsers: ["last 2 versions"]
-                        }),
-                        new(require('less-plugin-clean-css'))(cleanCssOptions)
-                    ],
-                    modifyVars: {
-                        imgPath: '"http://mycdn.com/path/to/images"',
-                        bgColor: 'red'
-                    }
+                    paths: ["style"],
+                    cleancss: true
                 },
                 files: {
-                    "path/to/result.css": "path/to/source.less"
+                    "style/main.css": "style/main.less"
                 }
             }
         },
 
         watch: {
             styles: {
-                files: ['less/**/*.less'], // which files to watch
+                files: ['style/**/*.less'], // which files to watch
                 tasks: ['less'],
                 options: {
                     nospawn: true
